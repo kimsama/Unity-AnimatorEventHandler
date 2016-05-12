@@ -6,9 +6,9 @@ using System.Collections;
 /// </summary>
 public class AnimatorEventHandler : MonoBehaviour
 {
-
+    [HideInInspector]
     [SerializeField]
-    private AnimatorStateEvent[] m_AnimatorStateEvents = new AnimatorStateEvent[0];
+    private AnimStateInfo[] m_AnimStateInfos = new AnimStateInfo[0];
 
 #if UNITY_EDITOR
     // Used by the editor to keep the ability list selection.
@@ -18,13 +18,4 @@ public class AnimatorEventHandler : MonoBehaviour
 #endif
 
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
