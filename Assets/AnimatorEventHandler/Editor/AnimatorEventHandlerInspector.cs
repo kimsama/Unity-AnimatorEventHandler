@@ -38,7 +38,7 @@ public class AnimatorEventHandlerInspector : Editor
 
     private void OnEnable()
     {
-        // Search through all of the assemblies to find any types that derive from Ability.
+        // Search through all of the assemblies to find any types that derive from AnimStateInfo.
         animStateInfoTypes.Clear();
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
         for (int i = 0; i < assemblies.Length; ++i)
@@ -46,7 +46,7 @@ public class AnimatorEventHandlerInspector : Editor
             var assemblyTypes = assemblies[i].GetTypes();
             for (int j = 0; j < assemblyTypes.Length; ++j)
             {
-                // Must derive from Ability;
+                // Must derive from AnimStateInfo;
                 if (!typeof(AnimStateInfo).IsAssignableFrom(assemblyTypes[j]))
                 {
                     continue;
